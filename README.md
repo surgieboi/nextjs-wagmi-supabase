@@ -2,6 +2,12 @@
 
 This proof-of-concept uses [Wagmi](https://wagmi.sh/) to connect and save Web3 wallet addresses to [Supabase](https://supabase.com/) using a connected wallet's address within a [Next.js](https://nextjs.org/) application.
 
+### Deploy on Vercel
+
+Before deploying, read `Get Started` and ensure that you have created the necessary environment variables.
+
+<a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsurgieboi%2Fnextjs-wagmi-supabase&env=NEXT_PUBLIC_ALCHEMY_API_KEY,NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_SUPABASE_ANON_KEY"><img src="https://vercel.com/button" alt="Deploy with Vercel"/></a>
+
 # Getting Started
 
 1. `git clone https://github.com/surgieboi/nextjs-wagmi-supabase.git`

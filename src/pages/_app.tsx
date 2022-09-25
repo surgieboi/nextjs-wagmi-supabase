@@ -51,7 +51,7 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <WagmiConfig client={client}>
       <NextHead>
-        <title>drooler</title>
+        <title>Next.js + Supabase + Tailwind + Wagmi: Saving Web3 Wallet Adddress to a Database</title>
       </NextHead>
 
       <Component {...pageProps} />
