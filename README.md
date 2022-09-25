@@ -1,6 +1,6 @@
 # Connecting Web3 Wallets to Supabase using Wagmi
 
-This proof-of-concept uses [Wagmi](https://wagmi.sh/) to connect and sace Web3 wallet addresses to [Supabase](https://supabase.com/) using a connected wallet's address within a [Next.js](https://nextjs.org/) application.
+This proof-of-concept uses [Wagmi](https://wagmi.sh/) to connect and save Web3 wallet addresses to [Supabase](https://supabase.com/) using a connected wallet's address within a [Next.js](https://nextjs.org/) application.
 
 # Getting Started
 
