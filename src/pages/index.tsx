@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useAccount } from 'wagmi'
 
-import { Account, Connect, CreateMember } from '../components'
+import { Account, Connect, SupabaseActions } from '../components'
 import { useIsMounted } from '../hooks'
 
 function Page() {
@@ -15,7 +15,7 @@ function Page() {
       {isMounted && isConnected && (
         <>
           <Account />
-          <CreateMember />
+          <SupabaseActions />
         </>
       )}
     </>

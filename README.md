@@ -18,16 +18,7 @@ Before deploying, read `Get Started` and ensure that you have created the necess
 5. `npm run dev`
 6. Visit [http://localhost:3000](http://localhost:3000)
 
-Additionally, you will need to complete the following Supabase configurations:
-
-1. Create an organization
-2. Create a project
-3. Proceed to Table Editor
-4. Create a table called, `member`
-5. Add a column to the table titled `eth_address` and assign it a `text` type value
-6. Update `eth_address` to be the Primary Key by checking the `Primary` checkbox
-7. Delete the default `id` column
-8. Save the table
+Additionally, read [Connecting and Using Supabase](#connecting-and-using-supabase), and ensure that you have properly setup your Supabase organization, project, and tables.
 
 Remember, in order to connect a Web3 wallet you will need a wallet extension added to your browser. This proof-of-concept is pre-configured with the following:
 
@@ -36,7 +27,40 @@ Remember, in order to connect a Web3 wallet you will need a wallet extension add
 - [WalletConnect](https://walletconnect.com/)
 - Injected: which will default to either Coinbase Wallet or MetaMask, and is used more specifically for wallets connected to Brave browsers.
 
-# Connecting to Supabase
+# Connecting and Using Supabase
+
+### Setting up Supabase
+
+Before you can save data from your application into Supabase, you will need to complete the following:
+
+#### General
+
+1. Create an organization
+2. Create a project
+
+#### Saving Wallet Adddresses
+
+1. Proceed to Table Editor
+2. Create a table called, `members`
+3. Add a column to the table titled `eth_address` and assign it a `text` type value
+4. Update `eth_address` to be the Primary Key by checking the `Primary` checkbox
+5. Delete the default `id` column
+6. Save the table
+
+Note, you can update table names; however, remember to update their references found throughout `/src/components/SupabaseActions.tsx`.
+
+#### Saving Signed Message Signatures
+
+1. Create a table called, `signings`
+2. Add 2 columns for `address` and `signature`; additionally, set both `types` to `text`, and ensure both column's `Is Nullable` setting is unchecked
+
+#### Saving Transaction Metadata
+
+1. Create a table called `transactions`
+2. Add 3 columns for `tx_hash`, `from`, and `to`; additionally, set all `types` to `text`, and ensure all column's `Is Nullable` setting is unchecked
+3. For `tx_hash`, update it to be `Primary` and remove `id` from the table
+4. Add another column called `amount` and set its `type` to `numeric`
+
 
 ### supabaseClient.js
 
@@ -44,9 +68,16 @@ Within `/utils` we connect our application to Supabase using `supabaseClient.js`
 
 Note, in order for your application to connect to Supabase, ensure that you've properly updated your `.env` file with your accounts `Anon Key` and `API URL`.
 
-### CreateMember Component
+### SupabaseActions Component
 
-Within `/components` we use the `CreateMember` function and `async` calls to `insert` and `select` data from Supabase. Additionally, we use `useEffect` and `useState` to update our application and check whether or not a wallet address has already been connected and saved to our database.
+Within `/components` we use the `SupabaseActions` to enable connected wallets to:
+
+1. `insert` and `select` a connect wallet's address from Supabase
+2. `insert` a completed signing message's signature value using Wagmi's `useSignMessage` hook
+3. `insert` a completed send trasnaction's hash value using Wagmi's `usePrepareSendTransaction`, `useSendTransaction` and `useWaitForTransaction` hook
+
+Note, this component also uses `useEffect` and `useState` to ensure that the application's data is validated before inserting it into Supabase. For example,  we `useEffect` to update the application's state to confirm that that the `useSignMessage` hook's response and response data has returned before using the `newSigning` const's `async` to `insert` data into Supabase.  
+
 
 # Dependencies
 

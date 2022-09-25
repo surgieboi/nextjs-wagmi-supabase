@@ -5,8 +5,13 @@ export function Account() {
   const { data: ensNameData } = useEnsName({ address })
 
   return (
-    <div className="flex flex-col items-center justify-center m-1 py-2 sm:flex-row">
-      <span className="font-bold mr-1">Wallet Address:</span>
+    <div className="flex flex-col items-center justify-center 
+                  sm:flex-row 
+                  m-1 py-2">
+      <span className="mr-1 
+                      font-bold">
+        Wallet Address:
+      </span>
       {ensNameData ?? address}
       {ensNameData ? ` (${address})` : null}
     </div>
