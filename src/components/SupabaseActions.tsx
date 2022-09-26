@@ -268,6 +268,7 @@ export function SupabaseActions() {
                               block 
                               text-sm font-medium text-slate-900">Amount (Ether)</label>
             <input
+              type="number"
               aria-label="Amount (Ether)"
               onChange={(e) => setValue(e.target.value)}
               placeholder="0.05"
