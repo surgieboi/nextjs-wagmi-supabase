@@ -1,10 +1,10 @@
 # Connecting Web3 Wallets to Supabase using Wagmi
 
-This proof-of-concept uses [Wagmi](https://wagmi.sh/) to connect and save Web3 wallet addresses to [Supabase](https://supabase.com/) using a connected wallet's address within a [Next.js](https://nextjs.org/) application.
+This proof-of-concept uses [Wagmi](https://wagmi.sh/) to connect and save Web3 wallet addresses and metadata to [Supabase](https://supabase.com/) using a connected wallet's address within a [Next.js](https://nextjs.org/) application.
 
 ### Deploy on Vercel
 
-Before deploying, read `Get Started` and ensure that you have created the necessary environment variables.
+Before deploying, read `Get Started` and ensure that you have created the required environment variables.
 
 <a href="https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsurgieboi%2Fnextjs-wagmi-supabase&env=NEXT_PUBLIC_ALCHEMY_API_KEY,NEXT_PUBLIC_SUPABASE_URL,NEXT_PUBLIC_SUPABASE_ANON_KEY"><img src="https://vercel.com/button" alt="Deploy with Vercel"/></a>
 
@@ -31,7 +31,7 @@ Remember, in order to connect a Web3 wallet you will need a wallet extension add
 
 ### Setting up Supabase
 
-Before you can save data from your application into Supabase, you will need to complete the following:
+Before you can save data from your application, you will need to complete the following:
 
 #### General
 
