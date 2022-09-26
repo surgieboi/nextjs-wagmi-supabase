@@ -1,4 +1,6 @@
-# Connecting Web3 Wallets to Supabase using Wagmi
+# dApp Starter Kit using Wagmi
+
+<img src="nextjs-supabase-tailwind-wagmi.jpg">
 
 This proof-of-concept uses [Wagmi](https://wagmi.sh/) to connect and save Web3 wallet addresses and metadata to [Supabase](https://supabase.com/) using a connected wallet's address within a [Next.js](https://nextjs.org/) application.
 
@@ -37,29 +39,39 @@ Before you can save data from your application, you will need to complete the fo
 
 1. Create an organization
 2. Create a project
+3. Proceed to Table Editor
 
 #### Saving Wallet Adddresses
 
-1. Proceed to Table Editor
-2. Create a table called, `members`
-3. Add a column to the table titled `eth_address` and assign it a `text` type value
-4. Update `eth_address` to be the Primary Key by checking the `Primary` checkbox
-5. Delete the default `id` column
-6. Save the table
+Create a table called, `wallets` and add the following columns:
+
+| Column        | Type           | Primary  | Is Nullable  |
+| ------------- |-------------| -----| -----|
+| wallet_address      | text | true | false |
+
+Delete the default `id` column and ensure that `wallet_address` is the only Primary value.
 
 Note, you can update table names; however, remember to update their references found throughout `/src/components/SupabaseActions.tsx`.
 
 #### Saving Signed Message Signatures
 
-1. Create a table called, `signings`
-2. Add 2 columns for `address` and `signature`; additionally, set both `types` to `text`, and ensure both column's `Is Nullable` setting is unchecked
+Create a table called, `signings` and add the following columns:
+
+| Column        | Type           | Primary  | Is Nullable  |
+| ------------- |-------------| -----| -----|
+| address      | text | false | false |
+| signature      | text | false | false |
 
 #### Saving Transaction Metadata
 
-1. Create a table called `transactions`
-2. Add 3 columns for `tx_hash`, `from`, and `to`; additionally, set all `types` to `text`, and ensure all column's `Is Nullable` setting is unchecked
-3. For `tx_hash`, update it to be `Primary` and remove `id` from the table
-4. Add another column called `amount` and set its `type` to `numeric`
+Create a table called `transactions` and add the following columns:
+
+| Column        | Type           | Primary  | Is Nullable  |
+| ------------- |-------------| -----| -----|
+| tx_hash      | text | true | false |
+| amount      | numeric | false | false |
+| from      | text | false | false |
+| to      | text | false | false |
 
 
 ### supabaseClient.js
