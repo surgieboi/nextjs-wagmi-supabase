@@ -86,6 +86,12 @@ Note, this component also uses `useEffect` and `useState` to ensure that the app
 - [Tailwind](https://tailwindui.com/)
 - Wagmi
 
+# Addtional Support
+
+### Tailwind CSS
+
+When using VS Code, Tailwind will initially create 3 warnings; specifically, from `/src/styles/globals.css`. To disable these warnings, visit the VC Code Marketplace and install [PostCSS Language Support](https://marketplace.visualstudio.com/items?itemName=csstools.postcss).
+
 # Contributing
 
 This proof-of-concept uses as an MIT license and is free to use. Moreover, you can create issues and pull requests, as this repository will be maintained and updated as it supports various Web3 MVPs.

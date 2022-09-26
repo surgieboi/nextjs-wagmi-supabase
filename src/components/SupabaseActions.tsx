@@ -181,8 +181,8 @@ export function SupabaseActions() {
             className="flex flex-col w-full"
             onSubmit={(event) => {
               event.preventDefault()
-              const formData = new FormData(event.target)
-              const message = formData.get('message')
+              const formData = new FormData(event.currentTarget)
+              const message = String(formData.get('message') || '');
               signMessage({ message })
               setSignature(false)
             }}
