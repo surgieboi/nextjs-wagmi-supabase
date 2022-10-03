@@ -1,4 +1,4 @@
-# dApp Starter Kit using Wagmi
+# Wagmi dApp Starter Kit
 
 <img src="nextjs-supabase-tailwind-wagmi.jpg">
 
