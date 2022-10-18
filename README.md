@@ -88,8 +88,6 @@ Within `/components` we use the `SupabaseActions` to enable connected wallets to
 2. `insert` a completed signing message's signature value using Wagmi's `useSignMessage` hook
 3. `insert` a completed send trasnaction's hash value using Wagmi's `usePrepareSendTransaction`, `useSendTransaction` and `useWaitForTransaction` hook
 
-Note, this component also uses `useEffect` and `useState` to ensure that the application's data is validated before inserting it into Supabase. For example,  we `useEffect` to update the application's state to confirm that that the `useSignMessage` hook's response and response data has returned before using the `newSigning` const's `async` to `insert` data into Supabase.  
-
 
 # Dependencies
 
